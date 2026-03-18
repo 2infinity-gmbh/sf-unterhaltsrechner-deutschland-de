@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Unterhaltsrechner Deutschland - Kindesunterhalt & Ehegattenunterhalt berechnen"
+  description="Kostenloser Unterhaltsrechner für Deutschland. Berechnen Sie schnell und einfach Kindesunterhalt, Ehegattenunterhalt und Trennungsunterhalt nach aktueller Düsseldorfer Tabelle."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Unterhaltsrechner Deutschland
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-blue-100">
+        Berechnen Sie Kindesunterhalt, Ehegattenunterhalt und Trennungsunterhalt schnell und kostenlos
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#rechner" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+          Jetzt berechnen
+        </a>
+        <a href="#info" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          Mehr erfahren
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section id="info" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Was ist Unterhalt?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Unterhalt ist eine gesetzliche Verpflichtung zur finanziellen Unterstützung von Familienangehörigen. In Deutschland gibt es verschiedene Arten von Unterhalt, die jeweils unterschiedlich berechnet werden.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Kindesunterhalt -->
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Kindesunterhalt</h3>
+          <p class="text-gray-600">
+            Minderjährige und in Ausbildung befindliche volljährige Kinder haben Anspruch auf Unterhalt. Die Höhe richtet sich nach der Düsseldorfer Tabelle und dem Einkommen des unterhaltspflichtigen Elternteils.
+          </p>
+        </div>
+
+        <!-- Ehegattenunterhalt -->
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Ehegattenunterhalt</h3>
+          <p class="text-gray-600">
+            Nach einer Scheidung kann der finanziell schwächere Ehepartner Anspruch auf nachehelichen Unterhalt haben. Die Berechnung berücksichtigt die ehelichen Lebensverhältnisse und Einkommensverhältnisse.
+          </p>
+        </div>
+
+        <!-- Trennungsunterhalt -->
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Trennungsunterhalt</h3>
+          <p class="text-gray-600">
+            Während der Trennungszeit vor einer Scheidung kann ein Anspruch auf Trennungsunterhalt bestehen. Dieser sichert die Lebenshaltung des wirtschaftlich schwächeren Ehegatten bis zur rechtskräftigen Scheidung.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section id="rechner" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+          Unterhaltsrechner
+        </h2>
+        <p class="text-center text-gray-600 mb-8">
+          Der Rechner befindet sich aktuell in Entwicklung. In Kürze können Sie hier Ihren individuellen Unterhaltsanspruch berechnen.
+        </p>
+
+        <!-- Placeholder for calculator -->
+        <div class="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center">
+          <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+          </svg>
+          <p class="text-gray-500 font-medium">Rechner-Tool wird hier integriert</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Important Info Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <div class="ml-3">
+            <h3 class="text-lg font-medium text-yellow-800 mb-2">Wichtiger Hinweis</h3>
+            <p class="text-yellow-700">
+              Dieser Rechner dient zur unverbindlichen Orientierung. Die tatsächliche Unterhaltshöhe kann von individuellen Faktoren abhängen und sollte durch einen Fachanwalt für Familienrecht oder das zuständige Jugendamt geprüft werden. Alle Angaben erfolgen ohne Gewähr.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+        Häufig gestellte Fragen
+      </h2>
+      <div class="space-y-6">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Was ist die Düsseldorfer Tabelle?
+          </h3>
+          <p class="text-gray-600">
+            Die Düsseldorfer Tabelle ist eine bundesweit anerkannte Richtlinie zur Berechnung des Kindesunterhalts. Sie wird vom Oberlandesgericht Düsseldorf herausgegeben und regelmäßig aktualisiert. Die Tabelle staffelt den Unterhaltsbedarf nach Alter des Kindes und Einkommen des Unterhaltspflichtigen.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Bis wann muss Kindesunterhalt gezahlt werden?
+          </h3>
+          <p class="text-gray-600">
+            Grundsätzlich besteht die Unterhaltspflicht bis zum Abschluss der ersten Berufsausbildung des Kindes. Bei minderjährigen Kindern ist der Unterhalt immer zu zahlen. Bei volljährigen Kindern in Ausbildung kann die Unterhaltspflicht bis zum 25. Lebensjahr bestehen, sofern das Kind die Ausbildung zügig durchläuft.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Was zählt zum unterhaltsrelevanten Einkommen?
+          </h3>
+          <p class="text-gray-600">
+            Zum unterhaltsrelevanten Einkommen zählen alle Einkünfte: Gehalt, Selbstständigeneinkommen, Mieteinnahmen, Kapitalerträge und weitere regelmäßige Einkünfte. Abzugsfähig sind berufsbedingte Aufwendungen, Steuern, Sozialversicherungsbeiträge und unter Umständen Schulden. Die genaue Berechnung sollte durch einen Fachmann erfolgen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-blue-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">
+        Benötigen Sie rechtliche Beratung?
+      </h2>
+      <p class="text-xl mb-8 text-blue-100">
+        Für eine verbindliche Einschätzung Ihrer Unterhaltssituation empfehlen wir die Konsultation eines Fachanwalts für Familienrecht.
+      </p>
+      <a href="#rechner" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+        Zum Rechner
+      </a>
+    </div>
+  </section>
+</Layout>

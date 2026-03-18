@@ -1,0 +1,132 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og-image.jpg', Astro.site);
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${Astro.site}#website`,
+      "url": Astro.site,
+      "name": "Unterhaltsrechner Deutschland",
+      "description": "Kostenloser Unterhaltsrechner für Deutschland - Kindesunterhalt, Ehegattenunterhalt und Trennungsunterhalt berechnen",
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "Organization",
+      "@id": `${Astro.site}#organization`,
+      "name": "Unterhaltsrechner Deutschland",
+      "url": Astro.site,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${Astro.site}favicon.svg`
+      }
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="de_DE" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+    <!-- Analytics -->
+    <script defer data-domain="unterhaltsrechner-deutschland.de" src="https://plausible.io/js/script.js"></script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+            <span class="text-xl font-bold text-gray-900">Unterhaltsrechner Deutschland</span>
+          </a>
+          <div class="hidden md:flex space-x-6">
+            <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors">Rechner</a>
+            <a href="/impressum" class="text-gray-700 hover:text-blue-600 transition-colors">Impressum</a>
+            <a href="/datenschutz" class="text-gray-700 hover:text-blue-600 transition-colors">Datenschutz</a>
+          </div>
+          <!-- Mobile menu button -->
+          <button class="md:hidden text-gray-700" aria-label="Menü öffnen">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-white font-semibold mb-4">Unterhaltsrechner Deutschland</h3>
+            <p class="text-sm">
+              Kostenloser Online-Rechner zur Berechnung von Kindesunterhalt, Ehegattenunterhalt und Trennungsunterhalt nach deutscher Rechtslage.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Rechtliches</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/impressum" class="hover:text-white transition-colors">Impressum</a></li>
+              <li><a href="/datenschutz" class="hover:text-white transition-colors">Datenschutzerklärung</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Hinweis</h3>
+            <p class="text-sm">
+              Alle Berechnungen erfolgen ohne Gewähr. Für verbindliche Auskünfte wenden Sie sich bitte an einen Rechtsanwalt oder das zuständige Jugendamt.
+            </p>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
+          <p>&copy; {new Date().getFullYear()} Unterhaltsrechner Deutschland. Alle Rechte vorbehalten.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
